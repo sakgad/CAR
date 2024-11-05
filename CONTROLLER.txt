@@ -1,0 +1,23 @@
+#include <IRremote.h>
+const int button2 = 2;
+IRsend irsend;
+
+void setup() {
+  pinMode(button2, INPUT_PULLUP);
+  Serial.begin(9600);
+}
+
+void loop() {
+  // int button2v = digitalRead(2);
+  // if (button2v == HIGH) {
+  //   Serial.println("hi");
+  // }
+  // else {
+  //   irsend.sendNEC(0xc5000000, 8);
+  //   Serial.println("bye");
+  // }
+  for(int i=0; i <3; i++){
+    irsend.sendSony(0xa190,12);
+    delay(100);
+    }
+}
